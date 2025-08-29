@@ -33,7 +33,7 @@ const PortalCard = ({
 
       {/* Button */}
       <div className="mt-8 flex justify-center">
-        <button onClick={onClick} className="btn-finance px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 group-hover:scale-105 transition-all duration-300 text-slate-200 bg-gray-200 hover:bg-gray-100">
+        <button onClick={onClick} className="btn-finance px-6 py-3 font-semibold flex items-center space-x-2 group-hover:scale-105 transition-all duration-300 text-slate-200 rounded-lg bg-cyan-800 hover:bg-cyan-700">
           <span>{buttonText}</span>
           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
         </button>
