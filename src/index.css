@@ -2,41 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Finance Landing Page Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark theme finance colors */
+    --background: 220 100% 4%;
+    --background-secondary: 218 100% 6%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 50% 8%;
+    --card-foreground: 0 0% 95%;
+    --card-hover: 220 50% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 50% 8%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 195 100% 50%;
+    --primary-foreground: 220 100% 4%;
+    --primary-hover: 195 100% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 0 0% 90%;
+    --secondary-hover: 215 25% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 215 25% 12%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 180 100% 40%;
+    --accent-foreground: 0 0% 98%;
+    --accent-hover: 180 100% 35%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 25% 15%;
+    --input: 215 25% 12%;
+    --ring: 195 100% 50%;
 
-    --radius: 0.5rem;
+    /* Design tokens */
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 100% 4%), hsl(218 100% 6%), hsl(215 100% 8%));
+    --gradient-card: linear-gradient(145deg, hsl(220 50% 8%), hsl(218 45% 10%));
+    --gradient-button: linear-gradient(135deg, hsl(195 100% 50%), hsl(180 100% 45%));
+    
+    /* Shadows */
+    --shadow-card: 0 10px 30px -5px hsl(220 100% 2% / 0.5), 0 0 0 1px hsl(215 25% 15% / 0.1);
+    --shadow-button: 0 5px 20px -5px hsl(195 100% 50% / 0.3);
+    --shadow-glow: 0 0 40px hsl(195 100% 50% / 0.15);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +120,92 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: var(--gradient-primary);
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 1px 1px, hsl(195 100% 50% / 0.1) 1px, transparent 0);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+@layer components {
+  /* Hero section styles */
+  .hero-gradient {
+    background: var(--gradient-primary);
+    position: relative;
+  }
+
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, hsl(195 100% 50% / 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Portal card styles */
+  .portal-card {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid hsl(var(--border));
+    transition: var(--transition-smooth);
+  }
+
+  .portal-card:hover {
+    background: linear-gradient(145deg, hsl(var(--card-hover)), hsl(218 50% 12%));
+    box-shadow: var(--shadow-glow), var(--shadow-card);
+    transform: translateY(-2px);
+  }
+
+  /* Button variants */
+  .btn-finance {
+    background: var(--gradient-button);
+    box-shadow: var(--shadow-button);
+    border: none;
+    color: hsl(var(--primary-foreground));
+    font-weight: 600;
+    transition: var(--transition-bounce);
+  }
+
+  .btn-finance:hover {
+    background: linear-gradient(135deg, hsl(var(--primary-hover)), hsl(var(--accent-hover)));
+    box-shadow: 0 8px 25px -8px hsl(195 100% 50% / 0.4);
+    transform: translateY(-1px) scale(1.02);
+  }
+
+  /* Navigation styles */
+  .nav-glass {
+    background: hsl(220 50% 8% / 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  /* Icon containers */
+  .icon-container {
+    background: linear-gradient(135deg, hsl(195 100% 50% / 0.1), hsl(180 100% 40% / 0.1));
+    border: 1px solid hsl(195 100% 50% / 0.2);
+  }
+
+  /* Typography */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(195 100% 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
