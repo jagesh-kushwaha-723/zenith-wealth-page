@@ -18,12 +18,6 @@ const Navigation = () => {
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             <a
-              href="#home"
-              className="text-foreground/80 hover:text-primary transition-colors duration-200 font-medium"
-            >
-              Home
-            </a>
-            <a
               href="#about"
               className="text-foreground/80 hover:text-primary transition-colors duration-200 font-medium"
             >

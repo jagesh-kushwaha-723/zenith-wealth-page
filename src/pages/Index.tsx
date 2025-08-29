@@ -1,16 +1,16 @@
-import { TrendingUp, PieChart } from "lucide-react";
+import { Users, Thermometer } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import PortalCard from "@/components/PortalCard";
 
 const Index = () => {
-  const handlePlanningPortal = () => {
-    console.log("Opening Planning Portal");
-    // Navigate to planning portal
+  const handleDistributionPortal = () => {
+    console.log("Opening Distribution Management");
+    // Navigate to distribution management
   };
 
-  const handleProcurementPortal = () => {
-    console.log("Opening Procurement Portal");
-    // Navigate to procurement portal
+  const handleWarehousePortal = () => {
+    console.log("Opening Warehouse Temperature Monitoring");
+    // Navigate to warehouse temperature monitoring
   };
 
   return (
@@ -39,25 +39,25 @@ const Index = () => {
         {/* Portal Cards Section */}
         <section className="container mx-auto px-6 pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            {/* Planning Portal */}
+            {/* Distribution Management */}
             <div className="animate-scale-in" style={{ animationDelay: '0.2s' }}>
               <PortalCard
-                title="Planning Portal"
+                title="Distribution Management"
                 description="Access project planning tools, resource allocation, and timeline management for comprehensive financial oversight"
-                buttonText="Enter Planning Portal"
-                icon={TrendingUp}
-                onClick={handlePlanningPortal}
+                buttonText="Enter Distribution Management"
+                icon={Users}
+                onClick={handleDistributionPortal}
               />
             </div>
 
-            {/* Procurement Portal */}
+            {/* Warehouse Temperature Monitoring */}
             <div className="animate-scale-in" style={{ animationDelay: '0.4s' }}>
               <PortalCard
-                title="Procurement Portal"
-                description="Manage vendors, contracts, purchasing processes, and supplier relationships with advanced analytics"
-                buttonText="Enter Procurement Portal"
-                icon={PieChart}
-                onClick={handleProcurementPortal}
+                title="Warehouse Temperature Monitoring"
+                description="Monitor and manage warehouse temperature controls, environmental conditions, and equipment status with real-time analytics"
+                buttonText="Enter Temperature Monitoring"
+                icon={Thermometer}
+                onClick={handleWarehousePortal}
               />
             </div>
           </div>
