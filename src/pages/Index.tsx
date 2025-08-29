@@ -1,4 +1,4 @@
-import { Users, Thermometer } from "lucide-react";
+import { Handshake, Thermometer } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import PortalCard from "@/components/PortalCard";
 
@@ -27,10 +27,10 @@ const Index = () => {
               <h1 className="text-4xl md:text-6xl font-bold">
                 <span className="text-foreground">Welcome to</span>
                 <br />
-                <span className="text-gradient">Finance Workspace Hub</span>
+                <span className="text-gradient">SCM Solutions Hub</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Choose your portal to continue and unlock professional financial management tools
+                Choose your portal to continue and unlock professional supply chain management tools
               </p>
             </div>
           </div>
@@ -45,7 +45,7 @@ const Index = () => {
                 title="Distribution Management"
                 description="Access project planning tools, resource allocation, and timeline management for comprehensive financial oversight"
                 buttonText="Enter Distribution Management"
-                icon={Users}
+                icon={Handshake}
                 onClick={handleDistributionPortal}
               />
             </div>
@@ -67,7 +67,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="container mx-auto px-6 py-8 text-center border-t border-border/50">
         <p className="text-muted-foreground text-sm">
-          © 2025 Finance Hub. All rights reserved.
+          © 2025 SCM Solutions. All rights reserved.
         </p>
       </footer>
     </div>

@@ -11,7 +11,7 @@ const Navigation = () => {
               <Building2 className="h-6 w-6 text-primary" />
             </div>
             <span className="text-xl font-bold text-gradient">
-              Finance Hub
+              SCM Solutions
             </span>
           </div>
 
