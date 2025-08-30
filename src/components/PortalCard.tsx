@@ -17,7 +17,7 @@ const PortalCard = ({
       {/* Icon */}
       <div className="flex justify-center mb-6">
         <div className="icon-container p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300">
-          <Icon className="h-8 w-8 text-primary" />
+          <Icon className="h-8 w-8 text-accent" />
         </div>
       </div>
 
