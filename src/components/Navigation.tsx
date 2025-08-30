@@ -10,7 +10,7 @@ const Navigation = () => {
             <div className="icon-container p-2 rounded-lg">
               <Building2 className="h-6 w-6 text-primary" />
             </div>
-            <span className="text-xl font-bold text-gradient">
+            <span className="text-xl font-bold text-foreground">
               SCM Solutions
             </span>
           </div>
